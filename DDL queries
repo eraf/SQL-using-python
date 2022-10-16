@@ -1,0 +1,56 @@
+CREATE DATABASE IF NOT EXISTS mydb
+CREATE TABLE IF NOT EXISTS users(
+    id integer(11) NOT NULL,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255)
+)   #get inside the targeted database first
+
+CREATE TABLE IF NOT EXISTS users(
+    id integer(11) NOT NULL,
+    name varchar(255),
+    email varchar(255) UNIQUE,
+    password varchar(255)
+)
+
+CREATE TABLE IF NOT EXISTS users(
+    id integer(11) NOT NULL,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    UNIQUE(name, email)   #they need to be combinedly unique but name or email can be repeated individually
+)
+
+CREATE TABLE IF NOT EXISTS users(
+    id integer(11) NOT NULL,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    CONSTRAINT name_mail UNIQUE(name, email)   #we can later delete the constraint if needed
+)
+
+CREATE TABLE IF NOT EXISTS users(
+    id integer(11) NOT NULL,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255)
+    PRIMARY KEY(id, email)
+)
+
+CREATE TABLE orders(
+	order_id integer,
+    user_id integer,
+    time_of_order datetime,
+    PRIMARY KEY(order_id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+)
+
+
+
+
+
+#################################
+=
+DROP DATABASE mydb
+DROP TABLE users
+TRUNCATE TABLE users  #when you don't want to delete the table but empty the existing table
