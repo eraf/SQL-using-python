@@ -38,11 +38,35 @@ CREATE TABLE IF NOT EXISTS users(
 )
 
 CREATE TABLE orders(
-	order_id integer,
+    order_id integer,
     user_id integer,
     time_of_order datetime,
     PRIMARY KEY(order_id),
     FOREIGN KEY(user_id) REFERENCES users(id)
+)
+
+CREATE TABLE students(
+    student_id integer NOT NULL PRIMARY KEY,
+    name varchar(255),
+    email varchar(255) NOT NULL UNIQUE,
+    age integer CHECK ( age > 6 and age < 25 ) #if the entered age is not within 6 to 25 then the action will not take place
+)
+
+CREATE TABLE passengers(
+    passenger_id integer PRIMARY KEY,
+    name varchar(255),
+    gender varchar(255) DEFAULT "others",
+)
+
+CREATE TABLE passengers(
+    passenger_id integer PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    journey_date datetime DEFAULT CURRENT_TIMESTAMP
+)
+
+CREATE TABLE passengers(
+    passenger_id integer PRIMARY KEY AUTO_INCREMENT,
+    name varchar(255)
 )
 
 
@@ -54,3 +78,17 @@ CREATE TABLE orders(
 DROP DATABASE mydb
 DROP TABLE users
 TRUNCATE TABLE users  #when you don't want to delete the table but empty the existing table
+
+
+
+#################################
+
+ALTER TABLE students ADD COLUMN college varchar(255) NOT NULL
+
+ALTER TABLE students DROP COLUMN age
+
+ALTER TABLE students MODIFY COLUMN email integer
+
+ALTER TABLE students DROP CONSTRAINT name_mail
+
+ALTER TABLE passengers ADD CONSTRAINT p_email UNIQUE(email)
