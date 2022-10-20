@@ -17,3 +17,16 @@ SELECT DISTINCT sex FROM titanic #output two rows, male and female
 SELECT DISTINCT pclass, embarked FROM titanic     # gives all the unique combinations of the two variables
 
 SELECT * FROM titanic WHERE survived = 0       #all the rows of the dead
+SELECT column names FROM table WHERE condition1 AND/OR condition2
+SELECT name, sex, survived FROM titanic WHERE age between 20 AND 30
+
+
+
+###################        Order of execution       ###################
+                           F J W G H S D O
+FROM      JOIN      WHERE     GROUP BY     HAVING      SELECT      DISTINCT      ORDER BY
+
+
+SELECT cols FROM tablename WHERE colname IN/NOT IN  ( 'category1', 'category2' )
+SELECT cols FROM tablename WHERE colname LIKE "A%"        #all the rows of cols where colname starts with A
+SELECT cols FROM tablename WHERE colname LIKE "%A%"        #all the rows of cols where colname that has A
