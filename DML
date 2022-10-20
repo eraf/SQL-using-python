@@ -1,1 +1,19 @@
-INSERT
+INSERT INTO tablename ( column names ) VALUES ( values for each of the column names ) #it works without the column names but when we only want to insert values
+for certain columns
+INSERT INTO students ( studentID, name, email, password ) VALUES ( 1, "nice robin", "nicorobin@gmail.com", "dereshishi")
+
+Adding multiple rows
+INSERT INTO tablename VALUES (), (), ()
+
+################# Retrieve ##############
+SELECT * FROM tablename
+SELECT name, sex, survived FROM titanic
+
+SELECT name AS passengername, sex AS gender, survived FROM titanic
+SELECT name, sibsp + parch AS family, survived FROM titanic
+SELECT name, age + 103 AS currentage FROM titanic
+
+SELECT DISTINCT sex FROM titanic #output two rows, male and female
+SELECT DISTINCT pclass, embarked FROM titanic     # gives all the unique combinations of the two variables
+
+SELECT * FROM titanic WHERE survived = 0       #all the rows of the dead
