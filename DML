@@ -25,8 +25,17 @@ SELECT name, sex, survived FROM titanic WHERE age between 20 AND 30
 ###################        Order of execution       ###################
                            F J W G H S D O
 FROM      JOIN      WHERE     GROUP BY     HAVING      SELECT      DISTINCT      ORDER BY
+FRANK JOHN'S WICKED GRAVE HAUNTS SEVERAL DULL OWLS
 
 
 SELECT cols FROM tablename WHERE colname IN/NOT IN  ( 'category1', 'category2' )
 SELECT cols FROM tablename WHERE colname LIKE "A%"        #all the rows of cols where colname starts with A
 SELECT cols FROM tablename WHERE colname LIKE "%A%"        #all the rows of cols where colname that has A
+SELECT cols FROM tablename WHERE colname LIKE "Usop_"     #will show all the rows containing five letter words with the first four letters being usop
+
+
+UPDATE tablename SET colname = "nami"     #all the values in that column is now nami
+UPDATE users SET name = "luffy", email = "roger@gmail.com" WHERE condition1 AND condition2
+
+DELETE FROM tablename WHERE condition1 AND condition2
+DELETE FROM tablename WHERE 1   #truncate is a special case of delete
