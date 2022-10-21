@@ -39,3 +39,16 @@ UPDATE users SET name = "luffy", email = "roger@gmail.com" WHERE condition1 AND 
 
 DELETE FROM tablename WHERE condition1 AND condition2
 DELETE FROM tablename WHERE 1   #truncate is a special case of delete
+
+
+##################    Functions   ###################
+SELECT title, ABS ( gross - budget ) AS profit FROM movies;
+# ROUND ( mathematical operation, 2 ) - 2 decimal points
+# CEIL, FLOOR, UPPER, LOWER
+SELECT title, CONCAT(actor, ' ', director) AS crew FROM movies;
+SELECT title, LENGTH(title) AS length_of_title FROM movies;
+### AGGREGATE
+MAX(colname) - maximum row of that col
+similarly, MIN, SUM - sum of the entire column, AVG - average of the entire column
+COUNT(*) - returns number of rows
+COUNT(DISTINCT(colname)) - number of distinct elements in col
