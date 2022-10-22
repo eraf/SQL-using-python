@@ -1,0 +1,20 @@
+############# GROUP BY ##############
+
+SELECT name, COUNT(*) AS num_movies FROM movies GROUP BY actor
+FJWGHSDO 
+FROM gets excuted first and then GROUPY BY makes 1094 tables, one table for each actor
+COUNT(*) just counts the number of rows
+
+SELECT name, COUNT(*) AS num_movies FROM movies GROUP BY actor ORDER BY num_movies DESC LIMIT 5
+gives the five actors who have done the most number of movies
+
+#what are the five most profitable genres?
+groupby genres, generate profit, sum or avg over the profit and make it as some other column, select the genre name and that column
+SELECT genre, AVG(worldwide_gross - budget) AS avg_profit FROM movies GROUP BY genre ORDER BY avg_profit LIMIT 5
+
+SELECT actor, director, SUM(worldwide_gross - budget) AS net_profit FORM movies GROUP BY actor, director order BY net_profit
+
+####### HAVING to GROUP BY is like WHERE to SELECT
+
+
+################################################################
