@@ -52,3 +52,6 @@ MAX(colname) - maximum row of that col
 similarly, MIN, SUM - sum of the entire column, AVG - average of the entire column
 COUNT(*) - returns number of rows
 COUNT(DISTINCT(colname)) - number of distinct elements in col
+ORDER BY col1, col2
+ORDER BY colname DESC LIMIT 5     #returns top 5
+ORDER BY col1, col2 DESC    #here col1 gets ascending sorting and col2 descending withing col1 stratas
