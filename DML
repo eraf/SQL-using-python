@@ -55,3 +55,15 @@ COUNT(DISTINCT(colname)) - number of distinct elements in col
 ORDER BY col1, col2
 ORDER BY colname DESC LIMIT 5     #returns top 5
 ORDER BY col1, col2 DESC    #here col1 gets ascending sorting and col2 descending withing col1 stratas
+
+
+
+########################        Case        ###########################
+SELECT (income - budget) AS profit, 
+CASE
+    WHEN profit > 100 THEN "good"
+    WHEN profit > 50 AND profit < 100 THEN "medium"
+    ELSE "bad"
+END AS newcolumn
+FROM movies
+;
