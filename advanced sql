@@ -17,4 +17,11 @@ SELECT actor, director, SUM(worldwide_gross - budget) AS net_profit FORM movies 
 ####### HAVING to GROUP BY is like WHERE to SELECT
 
 
+
+
+
 ################################################################
+JOIN
+################################################################
+SELECT * FROM left_table m JOIN right_table u ON m.user_id = u.id
+
